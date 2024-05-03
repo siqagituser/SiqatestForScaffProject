@@ -7,18 +7,80 @@ packages:
   gitUrl: https://github.com/siqagituser/SiqatestForScaffProject
   gitUsername: siqagituser
   gitBranch: main
+- name: WmJDBCAdapter
+  wpmServer: https://packages.softwareag.com
+  wpmRegistry: softwareag
+services:
+- serviceName: project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:DatabasenewAccount
+  packages:
+  - name: SiqatestForScaffProject
+    version: "1.0"
+- serviceName: project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.operations.actions:DBInsert
+  packages:
+  - name: SiqatestForScaffProject
+    version: "1.0"
+- serviceName: project.siqatestforscaff.integrations:SIQAAdapterFlow
+  packages:
+  - name: SiqatestForScaffProject
+    version: "1.0"
 configurationVariables:
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionManagerSettings.heartBeatInterval
+  : "0"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionManagerSettings.blockingTimeout
+  : "1000"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.dbType
+  : MSSQL
+  jdbc.jdbcTestPool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/jdbcTestPool.log;ddtdbg.ProtocolTraceShowTime=true
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.otherProperties
+  : loginTimeout=60;driverType=thin;
+  jdbc.jdbcTestPool.maxConns: "10"
+  jdbc.jdbcTestPool.userid: root
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.databaseName
+  : SIQACloud
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.transactionType
+  : LOCAL_TRANSACTION
+  jdbc.jdbcTestPool.spyenabled: "false"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionManagerSettings.poolable
+  : "false"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.password
+  : "{AES}B2Xqma4Ost5nVUiXctJydQ=="
+  jdbc.jdbcTestPool.snoopenabled: "false"
+  jdbc.jdbcTestPool.spyparms: SpyAttributes=(log=(file)logs/spy/jdbcTestPool.log;logTName=yes;timestamp=yes)
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.serverName
+  : vmiboint01
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.user
+  : sa
   jdbc.jdbcTestPool.waitingThread: "0"
   jdbc.jdbcTestPool.minConns: "0"
   jdbc.jdbcTestPool.expireTime: "60000"
-  jdbc.jdbcTestPool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/jdbcTestPool.log;ddtdbg.ProtocolTraceShowTime=true
-  jdbc.jdbcTestPool.maxConns: "10"
-  jdbc.jdbcTestPool.userid: root
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionManagerSettings.startupBackoffSecs
+  : "10"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionEnabled
+  : "false"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionManagerSettings.maximumPoolSize
+  : "10"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.portNumber
+  : "1433"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionManagerSettings.poolIncrementSize
+  : "1"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.datasourceClass
+  : com.wm.dd.jdbcx.sqlserver.SQLServerDataSource
   jdbc.jdbcTestPool.driverAlias: MySQL Database Java Connector Driver
-  jdbc.jdbcTestPool.spyenabled: "false"
-  jdbc.jdbcTestPool.snoopenabled: "false"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.trustStore
+  : ""
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.networkProtocol
+  : tcp
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionManagerSettings.minimumPoolSize
+  : "0"
   jdbc.jdbcTestPool.password: "{AES}er+I3U8nDVm8F4DBRST1+A=="
-  jdbc.jdbcTestPool.spyparms: SpyAttributes=(log=(file)logs/spy/jdbcTestPool.log;logTName=yes;timestamp=yes)
   jdbc.jdbcTestPool.dbURL: jdbc:mysql://mysql.test.local:3306/webm
   jdbc.jdbcTestPool.poolThreshold: "0"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.driverType
+  : Progress® DataDirect®
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionSettings.keyStore
+  : ""
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionManagerSettings.startupRetryCount
+  : "0"
   jdbc.jdbcTestPool.useSSL: "false"
+  ? artConnection.SiqatestForScaffProject.project.siqatestforscaff.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.DatabasenewAccount.connectionManagerSettings.expireTimeout
+  : "1000"
